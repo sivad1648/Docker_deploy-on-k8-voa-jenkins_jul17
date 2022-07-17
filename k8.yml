@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ngnix-demo
+spec:
+  containers:
+  - name: ngnix-demo
+    image: sivad1648/demo_docker:latest
+    ports:
+    - containerPort:80
