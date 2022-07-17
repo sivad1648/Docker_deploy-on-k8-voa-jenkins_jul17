@@ -1,5 +1,4 @@
 FROM ubuntu
-LABEL Siva
 # Install Nginx
 RUN echo "deb http://archive.ubuntu.com/ubuntu/ raring main universe" >> /etc/apt/sources.list
 RUN apt-get update
