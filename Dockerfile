@@ -1,14 +1,30 @@
-# Pull the minimal Ubuntu image
-FROM ubuntu
+#
+# Nginx Dockerfile
+#
+# https://github.com/dockerfile/nginx
+#
 
-# Install Nginx
-RUN apt-get -y update && apt-get -y install nginx
+# Pull base image.
+FROM dockerfile/ubuntu
 
-# Copy the Nginx config
-COPY default /etc/nginx/sites-available/default
+# Install Nginx.
+RUN \
+  add-apt-repository -y ppa:nginx/stable && \
+  apt-get update && \
+  apt-get install -y nginx && \
+  rm -rf /var/lib/apt/lists/* && \
+  echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
+  chown -R www-data:www-data /var/lib/nginx
 
-# Expose the port for access
-EXPOSE 80/tcp
+# Define mountable directories.
+VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
-# Run the Nginx server
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+# Define working directory.
+WORKDIR /etc/nginx
+
+# Define default command.
+CMD ["nginx"]
+
+# Expose ports.
+EXPOSE 80
+EXPOSE 443
