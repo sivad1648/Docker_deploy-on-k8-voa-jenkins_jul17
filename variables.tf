@@ -73,7 +73,7 @@ type = string
 
 variable "pem_file" {
 description = "The name of pem file"
-default = "sd.pem"
+default = "TEST.pem"
 type = string
 }
 
@@ -85,7 +85,7 @@ type = number
 
 variable "ppk_file" {
 description = "The name of ppk file"
-default = "sd"
+default = "TEST"
 type = string
 }
 
@@ -103,7 +103,7 @@ type = string
 
 variable "key_name" {
 description = "The key for ec2 instance"
-default = "sd-LL"
+default = "LL-TEST"
 type = string
 }
 
