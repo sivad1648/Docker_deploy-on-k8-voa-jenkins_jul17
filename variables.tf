@@ -64,3 +64,33 @@ default = "192.16.2.0/24"
 description = "private_subnet_1"
 type = string
 }
+
+variable "key_algorithm" {
+description = "The key gen algorithm"
+default = "RSA"
+type = string
+}
+
+variable "pem_file" {
+description = "The name of pem file"
+default = "sd.pem"
+type = string
+}
+
+variable "file_perm" {
+description = "The file permission"
+default = "0400"
+type = number
+}
+
+variable "ppk_file" {
+description = "The name of ppk file"
+default = "sd"
+type = string
+}
+
+variable "ssh-location" {
+default = "0.0.0.0/0"
+description = "SSH variable for bastion host"
+type = string
+}
