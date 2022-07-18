@@ -94,3 +94,27 @@ default = "0.0.0.0/0"
 description = "SSH variable for bastion host"
 type = string
 }
+
+variable "instance_type" {
+description = "The type of ec2 instance"
+default = "t2.micro"
+type = string
+}
+
+variable "key_name" {
+description = "The key for ec2 instance"
+default = "demo-sd"
+type = string
+}
+
+variable "pubec2-name" {
+description = "The name of public ec2 instance"
+default = "public-ec2"
+type = string
+}
+
+variable "priec2-name" {
+description = "The name of private ec2 instance"
+default = "private-ec2"
+type = string
+}
