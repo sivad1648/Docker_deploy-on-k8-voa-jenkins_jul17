@@ -113,8 +113,3 @@ default = "public-ec2"
 type = string
 }
 
-variable "priec2-name" {
-description = "The name of private ec2 instance"
-default = "private-ec2"
-type = string
-}
