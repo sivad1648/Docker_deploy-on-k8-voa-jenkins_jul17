@@ -6,7 +6,7 @@ variable "region" {
 }
 
 variable "vpc-cidr" {
-default = "192.16.0.0/24"
+default = "192.16.0.0/16"
 description = "VPC CIDR BLOCK"
 type = string
 }
