@@ -103,7 +103,7 @@ type = string
 
 variable "key_name" {
 description = "The key for ec2 instance"
-default = "demo-sd"
+default = "sd"
 type = string
 }
 
