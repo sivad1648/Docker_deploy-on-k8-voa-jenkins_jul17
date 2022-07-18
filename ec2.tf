@@ -14,6 +14,7 @@ create_before_destroy = true
 tags = {
 "Name" = "${var.pubec2-name}"
 }
+}
 
 #one for private
 resource "aws_instance" "ec2_private" {
